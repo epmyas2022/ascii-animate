@@ -13,7 +13,7 @@ petición CURL realizada desde la terminal.
 Clonar el respotorio
 
 ```bash
-git clone
+git clone https://github.com/epmyas2022/ascii-animate.git
 ```
 
 Acceder a la carpeta del proyecto
