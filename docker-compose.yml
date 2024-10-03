@@ -1,0 +1,30 @@
+version: "3.0"
+services:
+  development:
+    image: ascii-animate:castor
+    container_name: development-ascii
+    build:
+      context: .
+      target: development
+      dockerfile: .docker/Dockerfile
+    ports:
+      - "${PORT:-3000}:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+  production:
+    image: ascii-animate:latest
+    container_name: production-ascii
+    build:
+      context: .
+      target: production
+      dockerfile: .docker/Dockerfile
+
+    ports:
+      - "${PORT:-8000}:80"
+    volumes:
+      - production-dist:/app
+
+volumes:
+  production-dist:
+    external: false
